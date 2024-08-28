@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$bg-color: hsl(209, 53%, 16%);
+$bg-color-two: hsl(199, 100%, 29%);
+$white: hsl(0, 0%, 100%);
+$color-primary: hsl(198, 63%, 38%);
+$color-secondary: hsl(202, 78%, 49%);
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(60deg, $bg-color, $bg-color-two);
+    color: $white;
+}
+
+.container {
+    @include flex-center();
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+}
+
+label {
+    font-size: 20px;
+    user-select: none;
+}
+
+input {
+    width: 80%;
+    padding: 10px 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: hsl(198, 63%, 38%);
+    transition: .5s ease-in-out;
+    &::placeholder {
+        color: $white;
+    }
+    &:focus, &:valid {
+        box-shadow: 0px 0px 8px 10px $color-secondary;
+    }
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: $color-primary;
+    transition: .2s ease-in-out;
+    color: $white;
+    cursor: pointer;
+    &:hover {
+        background-color: hsl(198, 63%, 48%);
+    }
+}
+
+#result {
+    font-size: 18px;
+    font-weight: 600;
+    user-select: none;
+}
